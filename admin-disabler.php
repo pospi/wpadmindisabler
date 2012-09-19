@@ -158,7 +158,7 @@ function adm_disabler_plugin_links($links, $file)
 	$base = basename(__FILE__);
 
 	if (basename($file) == $base) {
-		$links[] = '<a href="admin.php?page=">Settings</a>';
+		$links[] = '<a href="admin.php?page=admin-disabler">Settings</a>';
 		$links[] = '<a href="https://github.com/pospi/wpadmindisabler">Github</a>';
 	}
 
