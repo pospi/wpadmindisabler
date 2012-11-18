@@ -18,7 +18,7 @@ License: MIT
 function adm_disabler_check_admin_access()
 {
 	// check and make sure this isn't ajax, which is always processed through admin
-	if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+	if ((isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') || basename($_SERVER['PHP_SELF']) == 'admin-ajax.php') {
 		return;
 	}
 	// also check for CLI scripts, which should always run authenticated
